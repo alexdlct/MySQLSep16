@@ -9,7 +9,7 @@ List<CarModel> cars = carData.getAllCars();
 List<int> carYears = carData.GetYears();
 List<string> carMake = carData.GetMake();
 List<CarModel> carSearchYear = carData.SearchYear();
-/*CarModel car1 = new CarModel
+CarModel car1 = new CarModel
 {
     Year = 2022,
     Make = "Ford",
@@ -17,7 +17,8 @@ List<CarModel> carSearchYear = carData.SearchYear();
 
 };
 
-carData.CreateCar(car1);*/
+carData.CreateCar(car1);
+carData.DeleteCar(carData.GetCarbyID(7));
 
 foreach (CarModel car in cars)
 {
@@ -38,5 +39,7 @@ foreach (CarModel car in carSearchYear)
 {
     Console.WriteLine($"CarID: {car.CarID}, Year: {car.Year}, Make: {car.Make}, Model: {car.Model}");
 }
+
+
 
 Console.ReadLine();
