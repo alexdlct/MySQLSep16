@@ -2,12 +2,13 @@
 using MySQLSep16.DataAccess;
 using MySQLSep16.Models;
 
-
+//Alex Tamanaha P. 4
 CarData carData = new CarData();
 
 List<CarModel> cars = carData.getAllCars();
 List<int> carYears = carData.GetYears();
-
+List<string> carMake = carData.GetMake();
+List<CarModel> carSearchYear = carData.SearchYear();
 /*CarModel car1 = new CarModel
 {
     Year = 2022,
@@ -29,6 +30,13 @@ foreach (int year in carYears)
     Console.WriteLine($"Year: {year}");
 }
 
+foreach (string make in carMake)
+{
+    Console.WriteLine($"Make: {make}");
+}
+foreach (CarModel car in carSearchYear)
+{
+    Console.WriteLine($"CarID: {car.CarID}, Year: {car.Year}, Make: {car.Make}, Model: {car.Model}");
+}
+
 Console.ReadLine();
-
-

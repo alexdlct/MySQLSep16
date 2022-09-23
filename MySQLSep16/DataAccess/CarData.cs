@@ -31,6 +31,21 @@ namespace MySQLSep16.DataAccess
             return carYears;
         }
 
+        public List<string> GetMake()
+        {
+            string sql = "SELECT DISTINCT `Make` FROM `car_basic`";
+            List<string> carMake = _db.LoadData<string, dynamic>(sql, new { });
+            return carMake;
+        }
+
+        public List<CarModel> SearchYear()
+        {
+            string sql = "SELECT * FROM `car_basic` WHERE `Year` = 1965";
+            List<CarModel> SearchCarYear = _db.LoadData<CarModel, dynamic>(sql, new { });
+            return SearchCarYear;
+        }
+        
+
         /*
         private string connectionString = "server=localhost;port=3306;uid=appDev;pwd=AppDev22;database=db_garage;";
 
