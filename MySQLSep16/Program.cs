@@ -17,13 +17,22 @@ CarModel car1 = new CarModel
 
 };
 
-carData.CreateCar(car1);
-carData.DeleteCar(carData.GetCarbyID(7));
+//carData.CreateCar(car1);
+
 
 foreach (CarModel car in cars)
 {
     Console.WriteLine($"CarID: {car.CarID}, Year: {car.Year}, Make: {car.Make}, Model: {car.Model}");
 }
+
+
+CarModel carHold = carData.GetCarbyID(10);
+
+carHold.Make = car1.Make;
+carHold.Model = car1.Model;
+carHold.Year = car1.Year;
+
+carData.UpdateCar(carHold);
 
 foreach (int year in carYears)
 {
