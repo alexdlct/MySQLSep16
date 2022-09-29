@@ -8,10 +8,19 @@ Console.WriteLine("Let's test our Bank Transactions!!! Woot WHoot!");
 
 BankModel transaction = new BankModel
 {
-    Amt = 1000000,
+    Amt = 100,
     txDate = DateTime.Now,
-    txID = 1
+    txID = 2
 };
+
+BankData banker = new BankData();
+//banker.CreateTransaction(transaction);
+
+List<BankModel> transactions = banker.ReadAllTransactsWithType();
+foreach(BankModel b in transactions)
+{
+    Console.WriteLine(b);
+}
 
 Console.ReadLine();
 

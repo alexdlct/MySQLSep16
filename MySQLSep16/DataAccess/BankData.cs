@@ -32,6 +32,14 @@ namespace MySQLSep16.DataAccess
             return transaction.FirstOrDefault(u => u.txID == id);
         }
 
+        public List<BankModel> ReadAllTransactsWithType()
+        {
+            string sql = "SELECT tx_history.txID, tx_history.AMT, tx_history.txDate, tx_type.Type FROM tx_history INNER JOIN tx_type ON tx_history.tx_type_typeID=tx_type.typeID";
+
+            List<BankModel> bankTransaction = _db.LoadData<BankModel, dynamic>(sql, new { });
+            return bankTransaction;
+        }
+
 
     }
 }
