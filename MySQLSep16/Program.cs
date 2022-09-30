@@ -10,7 +10,7 @@ BankModel transaction = new BankModel
 {
     Amt = 100,
     txDate = DateTime.Now,
-    txID = 2
+    tx_type_typeID = 2
 };
 
 BankData banker = new BankData();
